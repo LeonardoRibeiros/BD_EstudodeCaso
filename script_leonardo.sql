@@ -1,3 +1,4 @@
+drop database biblioteca;
 create database biblioteca;
 use biblioteca;
 
@@ -5,7 +6,7 @@ create table aluno(
 idaluno INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(45)NOT NULL,
 e_mail VARCHAR(45)NOT NULL,
-telefone VARCHAR(19)NOT NULL);
+telefone VARCHAR(20)NOT NULL);
 
 create table acervo(
 isbn INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -44,8 +45,6 @@ telefone VARCHAR(19)NOT NULL,
 inic_expediente VARCHAR(5)NOT NULL,
 fim_expediente VARCHAR(5)NOT NULL,
 FOREIGN KEY(idfuncionario_endereco) REFERENCES funcionario_endereco(idfuncionario_endereco));
-
-drop database biblioteca;
 
 insert into aluno (idaluno, nome, e_mail, telefone) 
 values ("Amil Neely", "aneely0@storify.com", "(426) 1457687"),
@@ -203,3 +202,8 @@ select * from acervo where isbn in("947896311-2");
 select * from endereco where cep in("89010-000");
 select * from emprestimo where idemprestimo = 9;
 select * from funcionario where idfuncionario = 9;
+
+select emprestimo.idemprestimo, funcionario.idfuncionario 
+from emprestimo inner join funcionario on
+emprestimo.idemprestimo = funcionario.idfuncionario;
+
