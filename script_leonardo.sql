@@ -89,18 +89,6 @@ values ('11065-101', 2454, 'Blumenau'),
 ('07727-585', 1422, 'Blumenau'),
 ('89010-016', 2454, 'Blumenau');
 
-insert into emprestimo (data_emprestimo, data_devolucao) 
-values ('04/04/2022', '26/05/2022'),
-('15/10/2022', '30/11/2022'),
-('24/05/2022', '21/06/2022'),
-('29/11/2022', '12/12/2022'),
-('22/12/2021', '03/01/2022'),
-('05/03/2022', '28/04/2022'),
-('03/07/2022', '28/08/2022'),
-('12/05/2022', '25/06/2022'),
-('30/06/2022', '10/07/2022'),
-('08/07/2022', '21/08/2022');
-
 insert into funcionario (nome, e_mail, telefone, inic_expediente, fim_expediente) 
 values ('Sampson Wainscot', 'swainscot0@elpais.com', '(444) 6267010', '7:00 AM', '5:00 PM'),
 ('Blanche Fossitt', 'bfossitt1@taobao.com', '(891) 1298142', '2:30 PM', '10:30 PM'),
@@ -112,6 +100,18 @@ values ('Sampson Wainscot', 'swainscot0@elpais.com', '(444) 6267010', '7:00 AM',
 ('Keeley Eynaud', 'keynaud7@springer.com', '(812) 2587816', '1:30 PM', '9:30 PM'),
 ('Adelbert Burl', 'aburl8@wunderground.com', '(491) 5595175', '7:30 AM', '5:30 PM'),
 ('Venita McCue', 'vmccue9@seattletimes.com', '(398) 4917551', '7:00 AM', '5:00 PM');
+
+insert into emprestimo (data_emprestimo, data_devolucao) 
+values ('04/04/2022', '26/05/2022'),
+('15/10/2022', '30/11/2022'),
+('24/05/2022', '21/06/2022'),
+('29/11/2022', '12/12/2022'),
+('22/12/2021', '03/01/2022'),
+('05/03/2022', '28/04/2022'),
+('03/07/2022', '28/08/2022'),
+('12/05/2022', '25/06/2022'),
+('30/06/2022', '10/07/2022'),
+('08/07/2022', '21/08/2022');
 
 update aluno 
 set nome = 'Robby Brayford', e_mail= 'rbrayford0@wix.com' where idaluno = 1;
