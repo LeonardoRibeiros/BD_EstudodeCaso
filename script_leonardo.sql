@@ -18,8 +18,8 @@ idfuncionario INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(45)NOT NULL,
 e_mail VARCHAR(45)NOT NULL,
 telefone VARCHAR(19)NOT NULL,
-inic_expediente VARCHAR(5)NOT NULL,
-fim_expediente VARCHAR(5)NOT NULL);
+inic_expediente VARCHAR(10)NOT NULL,
+fim_expediente VARCHAR(10)NOT NULL);
 
 create table aluno_endereco(
 idaluno INT,
@@ -53,7 +53,7 @@ FOREIGN KEY(idfuncionario) REFERENCES funcionario(idfuncionario),
 FOREIGN KEY(isbn) REFERENCES acervo(isbn));
 
 
-insert into aluno (idaluno, nome, e_mail, telefone) 
+insert into aluno (nome, e_mail, telefone) 
 values ('Amil Neely', 'aneely0@storify.com', '(426) 1457687'),
 ('Chancey Moxon', 'cmoxon1@jalbum.net', '(406) 7861532'),
 ('Rafe Cammack', 'rcammack2@alibaba.com', '(550) 3835444'),
@@ -89,7 +89,7 @@ values ('11065-101', 2454, 'Blumenau'),
 ('07727-585', 1422, 'Blumenau'),
 ('89010-016', 2454, 'Blumenau');
 
-insert into emprestimo (idemprestimo, data_emprestimo, data_devolucao) 
+insert into emprestimo (data_emprestimo, data_devolucao) 
 values ('04/04/2022', '26/05/2022'),
 ('15/10/2022', '30/11/2022'),
 ('24/05/2022', '21/06/2022'),
@@ -101,7 +101,7 @@ values ('04/04/2022', '26/05/2022'),
 ('30/06/2022', '10/07/2022'),
 ('08/07/2022', '21/08/2022');
 
-insert into funcionario (idfuncionario, nome, e_mail, telefone, inic_expediente, fim_expediente) 
+insert into funcionario (nome, e_mail, telefone, inic_expediente, fim_expediente) 
 values ('Sampson Wainscot', 'swainscot0@elpais.com', '(444) 6267010', '7:00 AM', '5:00 PM'),
 ('Blanche Fossitt', 'bfossitt1@taobao.com', '(891) 1298142', '2:30 PM', '10:30 PM'),
 ('Yuma Hamsley', 'yhamsley2@friendfeed.com', '(582) 2807239', '7:00 AM', '5:00 PM'),
