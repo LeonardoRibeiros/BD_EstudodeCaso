@@ -3,7 +3,7 @@ create database biblioteca;
 use biblioteca;
 
 create table endereco(
-cep VARCHAR(256) NOT NULL PRIMARY KEY,
+cep INT NOT NULL PRIMARY KEY,
 numero VARCHAR(4)NOT NULL,
 cidade VARCHAR(45)NOT NULL);
 
@@ -34,7 +34,7 @@ FOREIGN KEY(idfuncionario) REFERENCES funcionario(idfuncionario),
 FOREIGN KEY(cep) REFERENCES endereco(cep));
 
 create table acervo(
-isbn VARCHAR(256) NOT NULL PRIMARY KEY,
+isbn INT NOT NULL PRIMARY KEY,
 titulo VARCHAR(45) NOT NULL,
 autor VARCHAR(45)NOT NULL,
 genero VARCHAR(45)NOT NULL, 
@@ -52,7 +52,6 @@ FOREIGN KEY(idaluno) REFERENCES aluno(idaluno),
 FOREIGN KEY(idfuncionario) REFERENCES funcionario(idfuncionario),
 FOREIGN KEY(isbn) REFERENCES acervo(isbn));
 
-
 insert into aluno (nome, e_mail, telefone) 
 values ('Amil Neely', 'aneely0@storify.com', '(426) 1457687'),
 ('Chancey Moxon', 'cmoxon1@jalbum.net', '(406) 7861532'),
@@ -66,28 +65,28 @@ values ('Amil Neely', 'aneely0@storify.com', '(426) 1457687'),
 ('Hughie McClancy', 'hmcclancy9@nhs.uk', '(894) 7482533');
 
 insert into acervo (isbn, titulo, autor, genero, estante, status_) 
-values ('925599169-8', 'A Magnificent Haunting', 'Zebulon Vanyatin','Suspense', 2, 'Disponivel'),
-('541550870-8', 'Taking Woodstock', 'Karylin Willingale', 'Romance', 2, 'Indisponivel'),
-('811731687-0', 'Lucky: No Time For Love', 'Richie Vickerman', 'Romance', 9, 'Disponivel'),
-('462285592-5', 'Star Trek: Of Gods and Men', 'Tiphany Swenson', 'Sci-fi', 3, 'Disponivel'),
-('991342248-5', 'Man in the Iron Mask, The', 'Clarissa Barkhouse', 'Drama', 7, 'Indisponivel'),
-('501856210-2', '49th Parallel', 'Willie Syder', 'Fantasia', 6, 'Indisponivel'),
-('345770442-2', 'No Man of Her Own', 'Colet MacLeese', 'Romance', 7, 'Indisponivel'),
-('947896311-2', 'K2', 'Page Stadding', 'Sci-fi', 10, 'Indisponivel'),
-('102586191-4', 'Nights and Weekends', 'Millard Causley', 'Aventura', 4, 'Disponivel'),
-('999695436-6', 'Days of Glory', 'Noland Orchart', 'Fantasia', 10, 'Indisponivel');
+values (9255991698, 'A Magnificent Haunting', 'Zebulon Vanyatin','Suspense', 2, 'Disponivel'),
+(5415508708, 'Taking Woodstock', 'Karylin Willingale', 'Romance', 2, 'Indisponivel'),
+(8117316870, 'Lucky: No Time For Love', 'Richie Vickerman', 'Romance', 9, 'Disponivel'),
+(4622855925, 'Star Trek: Of Gods and Men', 'Tiphany Swenson', 'Sci-fi', 3, 'Disponivel'),
+(9913422485, 'Man in the Iron Mask, The', 'Clarissa Barkhouse', 'Drama', 7, 'Indisponivel'),
+(5018562102, '49th Parallel', 'Willie Syder', 'Fantasia', 6, 'Indisponivel'),
+(3457704422, 'No Man of Her Own', 'Colet MacLeese', 'Romance', 7, 'Indisponivel'),
+(9478963112, 'K2', 'Page Stadding', 'Sci-fi', 10, 'Indisponivel'),
+(1025861914, 'Nights and Weekends', 'Millard Causley', 'Aventura', 4, 'Disponivel'),
+(9996954366, 'Days of Glory', 'Noland Orchart', 'Fantasia', 10, 'Indisponivel');
 
 insert into endereco (cep, numero, cidade) 
-values ('11065-101', 2454, 'Blumenau'),
-('88037-375', 26, 'Blumenau'),
-('88131-601', 360, 'Blumenau'),
-('88160-076', 5225, 'Blumenau'),
-('88340-479', 66, 'Blumenau'),
-('88701-210', 222, 'Blumenau'),
-('89010-000', 671, 'Blumenau'),
-('89010-001', 52, 'Blumenau'),
-('07727-585', 1422, 'Blumenau'),
-('89010-016', 2454, 'Blumenau');
+values (11065-101, 2454, 'Blumenau'),
+(88037375, 26, 'Blumenau'),
+(88131601, 360, 'Blumenau'),
+(88160076, 5225, 'Blumenau'),
+(88340479, 66, 'Blumenau'),
+(88701210, 222, 'Blumenau'),
+(89010000, 671, 'Blumenau'),
+(89010001, 52, 'Blumenau'),
+(07727585, 1422, 'Blumenau'),
+(89010016, 2454, 'Blumenau');
 
 insert into funcionario (nome, e_mail, telefone, inic_expediente, fim_expediente) 
 values ('Sampson Wainscot', 'swainscot0@elpais.com', '(444) 6267010', '7:00 AM', '5:00 PM'),
@@ -125,26 +124,26 @@ update aluno
 set nome = 'Amby Eddie', e_mail= 'aeddie4@europa.eu' where idaluno = 7;
 
 update acervo
-set titulo = 'Abbott and Costello in the Foreign Legion', autor = 'Cecilio Greedy' where isbn = '925599169-8';
+set titulo = 'Abbott and Costello in the Foreign Legion', autor = 'Cecilio Greedy' where isbn = 9255991698;
 update acervo
-set titulo = 'Progression', autor = 'Derick Marrett' where isbn = '811731687-0';
+set titulo = 'Progression', autor = 'Derick Marrett' where isbn = 8117316870;
 update acervo
-set titulo = 'Freaky Friday', autor = 'Hyman Bromehed' where isbn = '102586191-4';
+set titulo = 'Freaky Friday', autor = 'Hyman Bromehed' where isbn = 1025861914;
 update acervo
-set titulo = 'Varasto', autor = 'Sibley Hainey' where isbn = '999695436-6';
+set titulo = 'Varasto', autor = 'Sibley Hainey' where isbn = 9996954366;
 update acervo
-set titulo = 'Tyler Perry Meet the Browns', autor = 'Marisa Bullimore' where isbn = '501856210-2';
+set titulo = 'Tyler Perry Meet the Browns', autor = 'Marisa Bullimore' where isbn = 5018562102;
 
 update endereco
-set numero = 552 where cep = '11065-101';
+set numero = 552 where cep = 11065101;
 update endereco
-set numero = 672 where cep = '888131-601';
+set numero = 672 where cep = 888131601;
 update endereco
-set numero = 99 where cep = '88160-076';
+set numero = 99 where cep = 88160076;
 update endereco
-set numero = 117 where cep = '88701-210';
+set numero = 117 where cep = 88701210;
 update endereco
-set numero = 1322 where cep = '89010-016';
+set numero = 1322 where cep = 89010016;
 
 update emprestimo
 set data_emprestimo = '10/10/2022' where idemprestimo = 2;
@@ -174,17 +173,17 @@ delete from aluno where idaluno = 3;
 delete from aluno where idaluno = 4;
 delete from aluno where idaluno = 5;
 
-delete from acervo where isbn = '925599169-8';
-delete from acervo where isbn = '541550870-8';
-delete from acervo where isbn = '462285592-5';
-delete from acervo where isbn = '345770442-2';
-delete from acervo where isbn = '999695436-6';
+delete from acervo where isbn = 9255991698;
+delete from acervo where isbn = 5415508708;
+delete from acervo where isbn = 4622855925;
+delete from acervo where isbn = 3457704422;
+delete from acervo where isbn = 9996954366;
 
-delete from endereco where cep = '11065-101';
-delete from endereco where cep = '888131-601';
-delete from endereco where cep = '88160-076';
-delete from endereco where cep = '88701-210';
-delete from endereco where cep = '89010-016';
+delete from endereco where cep = 11065101;
+delete from endereco where cep = 888131601;
+delete from endereco where cep = 88160076;
+delete from endereco where cep = 88701210;
+delete from endereco where cep = 89010016;
 
 delete from emprestimo where idemprestimo = 1;
 delete from emprestimo where idemprestimo = 2;
@@ -205,8 +204,8 @@ select * from emprestimo order by idemprestimo asc;
 select * from funcionario order by idfuncionario asc;
 
 select * from aluno where idaluno = 9;
-select * from acervo where isbn in('947896311-2');
-select * from endereco where cep in('89010-000');
+select * from acervo where isbn = 9478963112;
+select * from endereco where cep = 89010000;
 select * from emprestimo where idemprestimo = 9;
 select * from funcionario where idfuncionario = 9;
 
